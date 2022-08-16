@@ -76,15 +76,15 @@ fetch('https://prod-110.westus.logic.azure.com/workflows/e50f80756b9b43baa71d055
                         listaModoPerparo +=itemModo
                          
                     }
-                    console.log( "<ul>" +lista + "</ul>")
-                    //item = "<ul>" + itemIngredientes + "</ul>"
+              
+                  
                     textoReceitas += "<b>Título: </b>" + titleCase(data.value[index].Titulo) +
-                        " <br><b>Ingredientes:</b>" + lista
+                        " <br><b>Ingredientes:</b> <ul>" + lista
                         +
 
 
-                        "<br> <b>Modo de Preparo:</b>"
-                        + listaModoPerparo + "<br> <img src='" + data.value[index].Imagem + "'><br>"
+                        "</ul><br> <b>Modo de Preparo:</b>"
+                        + "<ol>"+listaModoPerparo + "</ol><br> <img height='200px' width='200px' src='" + data.value[index].Imagem + "'><br>"
 
                 }
                 document.getElementById("receita").innerHTML += textoReceitas
